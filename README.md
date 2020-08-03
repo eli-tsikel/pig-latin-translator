@@ -1,4 +1,4 @@
-[![build](https://github.com/githubslayer/pig-latin-translator/workflows/build/badge.svg?branch=master&event=push)](https://github.com/githubslayer/pig-latin-translator/actions?query=workflow%3Abuild)  [![codecov](https://codecov.io/gh/githubslayer/pig-latin-translator/branch/master/graph/badge.svg)](https://codecov.io/gh/githubslayer/pig-latin-translator) [![GitHub](https://img.shields.io/github/license/githubslayer/pig-latin-translator)](https://github.com/githubslayer/pig-latin-translator/blob/master/LICENSE)
+[![build](https://github.com/githubslayer/pig-latin-translator/workflows/build/badge.svg?branch=master&event=push)](https://github.com/githubslayer/pig-latin-translator/actions?query=workflow%3Abuild)  [![codecov](https://codecov.io/gh/githubslayer/pig-latin-translator/branch/master/graph/badge.svg?token=R6MCBWXP1S)](https://codecov.io/gh/githubslayer/pig-latin-translator) [![GitHub](https://img.shields.io/github/license/githubslayer/pig-latin-translator)](https://github.com/githubslayer/pig-latin-translator/blob/master/LICENSE)
 
 
 # Pig Latin Translator
