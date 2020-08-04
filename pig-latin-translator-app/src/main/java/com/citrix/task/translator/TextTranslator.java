@@ -10,14 +10,23 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Translator that reads from the {@link Reader} and writes the translated result to aa {@link Writer}.
+ */
 public class TextTranslator {
-
     private final Translator translator;
     
     public TextTranslator(Translator translator) {
         this.translator = translator;
     }
 
+    /**
+     * Translates text from <code>in</code> Reader and appends the result to an <code>out</code> Write parameters
+     * 
+     * @param in input text
+     * @param out output
+     * @throws IOException
+     */
     public void translate(Reader in, Writer out) throws IOException {
         try (var scanner = new Scanner(in)) {
             String translatedText;
