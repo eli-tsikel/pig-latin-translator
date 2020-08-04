@@ -18,6 +18,10 @@
 	* Capitalization must remain in the same place.
 		* **Beach** becomes **Eachbay**
 		* **McCloud** becomes **CcLoudmay**
+
+## Requirement
+* Java 11
+	 
 ## Quick start
 ### Build
 ```

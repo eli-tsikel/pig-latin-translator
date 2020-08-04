@@ -6,7 +6,7 @@ import static com.citrix.task.translator.piglatin.rules.Utils.isVowel;
 import static com.citrix.task.translator.piglatin.rules.Utils.removePunctuation;
 
 /**
- *  Words that start with a vowel have the letters “way” added to the end. 
+ *  Rule: Words that start with a vowel have the letters “way” added to the end. 
  *  <pre>
  *  apple becomes appleway
  *  </pre>

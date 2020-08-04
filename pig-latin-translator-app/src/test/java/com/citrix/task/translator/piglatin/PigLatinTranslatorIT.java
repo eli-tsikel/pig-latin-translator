@@ -14,8 +14,8 @@ public class PigLatinTranslatorIT {
         assertEquals(TEST_WORDS.length, WORDS_UT.length);
 
         for (int i = 0; i < TEST_WORDS.length; i++) {
-            String translated = PigLatinTranslatorFactory.create()
-                                                        .translate(TEST_WORDS[i]);
+            var translated = PigLatinTranslatorFactory.create()
+                                                      .translate(TEST_WORDS[i]);
 
             assertEquals(WORDS_UT[i], translated);
         }

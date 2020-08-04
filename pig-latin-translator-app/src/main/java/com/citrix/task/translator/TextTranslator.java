@@ -19,7 +19,7 @@ public class TextTranslator {
     }
 
     public void translate(Reader in, Writer out) throws IOException {
-        try (Scanner scanner = new Scanner(in)) {
+        try (var scanner = new Scanner(in)) {
             String translatedText;
             do {
                 translatedText = Stream.of(scanner.nextLine().split(" "))

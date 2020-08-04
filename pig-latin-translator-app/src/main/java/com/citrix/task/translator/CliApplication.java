@@ -12,10 +12,10 @@ import java.io.StringWriter;
 public class CliApplication {
 
     public static void main(String[] args) throws IOException {
-        TextTranslator translator = new TextTranslator(PigLatinTranslatorFactory.create());
+        var translator = new TextTranslator(PigLatinTranslatorFactory.create());
 
         System.out.println("Enter text to translate to Pig Latin: ");
-        StringWriter stringWriter = new StringWriter();
+        var stringWriter = new StringWriter();
         translator.translate(new InputStreamReader(System.in), stringWriter);
         
         System.out.println("Translated result is: ");

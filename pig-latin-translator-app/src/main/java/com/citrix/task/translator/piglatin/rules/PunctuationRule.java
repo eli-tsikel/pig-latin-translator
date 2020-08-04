@@ -6,7 +6,7 @@ import static com.citrix.task.translator.piglatin.rules.Utils.isPunctuation;
 import static com.citrix.task.translator.piglatin.rules.Utils.removePunctuation;
 
 /**
- * Punctuation must remain in the same relative place from the end of the word.
+ * Rule: Punctuation must remain in the same relative place from the end of the word.
  *
  * <pre>
  * can’t becomes antca’y 
@@ -22,17 +22,15 @@ public class PunctuationRule implements Rule {
             return translatedWord;
         }
 
-        StringBuilder resultBuilder = new StringBuilder(removePunctuation(translatedWord)).reverse();
-
-        String reversedOriginalWord = new StringBuilder(originalWord).reverse()
-                                                                     .toString();
+        var resultBuilder = new StringBuilder(removePunctuation(translatedWord)).reverse();
+        var reversedOriginalWord = new StringBuilder(originalWord).reverse()
+                                                                  .toString();
         for (int i = 0; i < reversedOriginalWord.length(); i++) {
             if (isPunctuation(reversedOriginalWord.charAt(i))) {
                 resultBuilder.insert(i, reversedOriginalWord.charAt(i));
             }
         }
 
-        return resultBuilder.reverse()
-                            .toString();
+        return resultBuilder.reverse().toString();
     }
 }

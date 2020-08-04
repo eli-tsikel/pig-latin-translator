@@ -14,15 +14,15 @@ public class CapitalizationRule implements Rule {
 
     @Override
     public String apply(String originalWord, String translatedWord) {
-        StringBuilder stringBuilder = new StringBuilder(translatedWord.toLowerCase());
+        var resultBuilder = new StringBuilder(translatedWord.toLowerCase());
         
         for (int i = 0; i < originalWord.length(); i++) {
             char ch = originalWord.charAt(i);
             if (Character.isUpperCase(ch)) {
-                stringBuilder.setCharAt(i, Character.toUpperCase(stringBuilder.charAt(i)));
+                resultBuilder.setCharAt(i, Character.toUpperCase(resultBuilder.charAt(i)));
             }
         }
         
-        return stringBuilder.toString();
+        return resultBuilder.toString();
     }
 }

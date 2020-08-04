@@ -1,7 +1,5 @@
 package com.citrix.task.translator.api;
 
-import java.util.Iterator;
-
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -14,27 +12,27 @@ public class HyphenAwareTranslatorTest {
 
     @Test
     public void testTranslate() {
-        Translator translator = mock(Translator.class);
+        var translator = mock(Translator.class);
         
-        HyphenAwareTranslator hyphenAwareTranslator = new HyphenAwareTranslator(translator);
+        var hyphenAwareTranslator = new HyphenAwareTranslator(translator);
         hyphenAwareTranslator.translate("this-bot");
         
-        ArgumentCaptor<String> wordCaptor = ArgumentCaptor.forClass(String.class);
+        var wordCaptor = ArgumentCaptor.forClass(String.class);
         verify(translator, times(2)).translate(wordCaptor.capture());
         
-        Iterator<String> words = wordCaptor.getAllValues().iterator();
-        assertEquals("this", words.next());
-        assertEquals("bot", words.next());
+        var wordsUT = wordCaptor.getAllValues().iterator();
+        assertEquals("this", wordsUT.next());
+        assertEquals("bot", wordsUT.next());
     }
     
     @Test
     public void testTranslate_noHyphen() {
-        Translator translator = mock(Translator.class);
+        var translator = mock(Translator.class);
         
-        HyphenAwareTranslator hyphenAwareTranslator = new HyphenAwareTranslator(translator);
+        var hyphenAwareTranslator = new HyphenAwareTranslator(translator);
         hyphenAwareTranslator.translate("thisbot");
         
-        ArgumentCaptor<String> wordCaptor = ArgumentCaptor.forClass(String.class);
+        var wordCaptor = ArgumentCaptor.forClass(String.class);
         verify(translator).translate(wordCaptor.capture());
         
         assertEquals("thisbot", wordCaptor.getValue());
@@ -42,12 +40,12 @@ public class HyphenAwareTranslatorTest {
     
     @Test
     public void testTranslate_emptyWord() {
-        Translator translator = mock(Translator.class);
+        var translator = mock(Translator.class);
         
-        HyphenAwareTranslator hyphenAwareTranslator = new HyphenAwareTranslator(translator);
+        var hyphenAwareTranslator = new HyphenAwareTranslator(translator);
         hyphenAwareTranslator.translate("");
         
-        ArgumentCaptor<String> wordCaptor = ArgumentCaptor.forClass(String.class);
+        var wordCaptor = ArgumentCaptor.forClass(String.class);
         verify(translator).translate(wordCaptor.capture());
         
         assertEquals("", wordCaptor.getValue());
