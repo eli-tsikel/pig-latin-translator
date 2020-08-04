@@ -1,6 +1,6 @@
 package com.citrix.task.translator;
 
-import com.citrix.task.translator.piglatin.PigLatinTranslator;
+import com.citrix.task.translator.piglatin.PigLatinTranslatorFactory;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,7 +12,7 @@ import java.io.StringWriter;
 public class CliApplication {
 
     public static void main(String[] args) throws IOException {
-        TextTranslator translator = new TextTranslator(PigLatinTranslator.create());
+        TextTranslator translator = new TextTranslator(PigLatinTranslatorFactory.create());
 
         System.out.println("Enter text to translate to Pig Latin: ");
         StringWriter stringWriter = new StringWriter();

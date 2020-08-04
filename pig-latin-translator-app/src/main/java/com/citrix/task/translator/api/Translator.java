@@ -1,7 +1,7 @@
 package com.citrix.task.translator.api;
 
 /**
- * Generic translator interface
+ * Translator contract for translating single word
  *
  */
 public interface Translator {

@@ -9,7 +9,7 @@ import static com.citrix.task.translator.piglatin.rules.Utils.removePunctuation;
  * Words that start with a consonant have their first letter moved to the end of
  * the word and the letters “ay” added to the end.
  * 
- * Words that end in “way” are not modified.
+ * Words that ends in “way” are not modified.
  * 
  * <pre>
  * Hello becomes Ellohay

@@ -1,8 +1,5 @@
 package com.citrix.task.translator.api;
 
-import com.citrix.task.translator.api.HyphenAwareTranslator;
-import com.citrix.task.translator.api.Translator;
-
 import java.util.Iterator;
 
 import org.junit.Test;
@@ -41,5 +38,18 @@ public class HyphenAwareTranslatorTest {
         verify(translator).translate(wordCaptor.capture());
         
         assertEquals("thisbot", wordCaptor.getValue());
+    }
+    
+    @Test
+    public void testTranslate_emptyWord() {
+        Translator translator = mock(Translator.class);
+        
+        HyphenAwareTranslator hyphenAwareTranslator = new HyphenAwareTranslator(translator);
+        hyphenAwareTranslator.translate("");
+        
+        ArgumentCaptor<String> wordCaptor = ArgumentCaptor.forClass(String.class);
+        verify(translator).translate(wordCaptor.capture());
+        
+        assertEquals("", wordCaptor.getValue());
     }
 }

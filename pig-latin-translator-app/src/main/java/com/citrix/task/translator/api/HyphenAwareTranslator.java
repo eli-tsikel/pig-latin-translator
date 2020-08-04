@@ -18,13 +18,9 @@ public class HyphenAwareTranslator implements Translator {
 
     @Override
     public String translate(String word) {
-        if (word.contains(HYPHEN)) {
-            return Stream.of(word.split(HYPHEN))
-                         .map(translator::translate)
-                         .collect(Collectors.joining(HYPHEN));
+        return Stream.of(word.split(HYPHEN))
+                     .map(translator::translate)
+                     .collect(Collectors.joining(HYPHEN));
 
-        } else {
-            return translator.translate(word);
-        }
     }
 }
